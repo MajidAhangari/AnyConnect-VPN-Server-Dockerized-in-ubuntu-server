@@ -5,36 +5,36 @@ We dockerized and added Dockerfile to run it anywhere you want on any linux dist
 
 Docker Installation
 
-    Install Docker
-    Build docker image
+    1.Install Docker
+    2.Build docker image
 
 docker build -t ocserv https://github.com/iw4p/OpenConnect-Cisco-AnyConnect-VPN-Server-OneKey-ocserv.git
 
-    Run docker container
+    3.Run docker container
 
 docker run --name ocserv --privileged -p 443:443 -p 443:443/udp -d ocserv
 
-    Add user
+    4.Add user
 
 docker exec -ti ocserv ocpasswd -c /etc/ocserv/ocpasswd testUserName
 
-    Change user password
+    5.Change user password
 
 docker exec -ti ocserv ocpasswd -c /etc/ocserv/ocpasswd testUserName
 
-    Delete user
+    6.Delete user
 
 docker exec -ti ocserv ocpasswd -c /etc/ocserv/ocpasswd -d testUserName
 
-    Lock user
+    7.Lock user
 
 docker exec -ti ocserv ocpasswd -c /etc/ocserv/ocpasswd -l testUserName
 
-    Unlock user
+    8.Unlock user
 
 docker exec -ti ocserv ocpasswd -c /etc/ocserv/ocpasswd -u testUserName
 
-    Show all users and their hashed password
+    9.Show all users and their hashed password
 
 docker exec -ti ocserv cat /etc/ocserv/ocpasswd
 
